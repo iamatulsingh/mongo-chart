@@ -2,6 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mongodb-pv-claim
+  namespace: {{ .Values.database.namespace }}
   labels:
     app: mongodb
 spec:
