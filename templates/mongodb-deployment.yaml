@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "mongo-chart.deployment" . }}
+  name: {{ include "mongo-helmchart.deployment" . }}
   namespace: {{ .Values.database.namespace }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ include "mongo-chart.deployment" . }}
+      app: {{ include "mongo-helmchart.deployment" . }}
   template:
     metadata:
       labels:
-        app: {{ include "mongo-chart.deployment" . }}
+        app: {{ include "mongo-helmchart.deployment" . }}
     spec:
       containers:
-      - name: {{ include "mongo-chart.deployment" . }}
+      - name: {{ include "mongo-helmchart.deployment" . }}
         image: mongo
         startupProbe:
           httpGet:

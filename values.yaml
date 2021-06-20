@@ -1,11 +1,11 @@
-# Default values for mongo-chart.
+# Default values for mongo-helmchart.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 database:
   rootPassword: seceret
   rootUsername: admin
-  namespace: mongo-chart
+  namespace: mongochart
 
 application:
   name: mongdb
