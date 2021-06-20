@@ -16,25 +16,6 @@ spec:
       containers:
       - name: {{ include "mongo-helmchart.deployment" . }}
         image: mongo
-        startupProbe:
-          httpGet:
-            path: /health/startup
-            port: 80
-          failureThreshold: 30
-          periodSeconds: 10
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 80
-          initialDelaySeconds: 0
-          periodSeconds: 10
-          timeoutSeconds: 1
-          failureThreshold: 3
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: 80
-          successThreshold: 3
         ports:
           - containerPort: 27017
         envFrom:
