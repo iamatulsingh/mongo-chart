@@ -1,4 +1,4 @@
-# mongo-helmchart
+# Mongo Helmchart
 
 [![Made with Helm](https://img.shields.io/badge/Made%20with-HELM-orange?style=for-the-badge&logo=helm)](https://www.espressif.com/en/products/socs/helm)
 
