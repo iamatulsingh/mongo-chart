@@ -15,9 +15,9 @@ data:
        port: 27017
     setParameter:
        enableLocalhostAuthBypass: false
- backup.sh: |
-   #!/bin/bash
-   /usr/bin/mongodump -u $MONGO_INITDB_ROOT_USERNAME -p $MONGO_INITDB_ROOT_PASSWORD -o /tmp/backup
+  backup.sh: |
+    #!/bin/bash
+    /usr/bin/mongodump -u $MONGO_INITDB_ROOT_USERNAME -p $MONGO_INITDB_ROOT_PASSWORD -o /tmp/backup
 
 kind: ConfigMap
 metadata:
