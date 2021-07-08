@@ -15,7 +15,7 @@ spec:
             args:
             - "/bin/sh"
             - "-c"
-            - "/usr/bin/mongodump -u $MONGO_INITDB_ROOT_USERNAME -p $MONGO_INITDB_ROOT_PASSWORD -o /tmp/backup -h mongodb"
+            - "/scripts/backup.sh"
             - "tar cvzf mongodb-backup.tar.gz /tmp/backup"
             #- gsutil cp mongodb-backup.tar.gz gs://my-project/backups/mongodb-backup.tar.gz
             envFrom:
@@ -24,8 +24,17 @@ spec:
             volumeMounts:
             - name: mongodb-persistent-storage
               mountPath: /data/db
+            volumeMounts:
+            - name: backup-script
+              mountPath: /scripts/backup.sh
+              subPath: backup.sh
           restartPolicy: OnFailure
           volumes:
           - name: mongodb-persistent-storage
             persistentVolumeClaim:
               claimName: mongodb-pv-claim
+          volumes:
+          - name: backup-script
+            configMap:
+              name: mongodb-config-file
+              defaultMode: 0777
