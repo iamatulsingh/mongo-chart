@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Values.database.namespace }}
 spec:
   ports:
-  - port: 27017
+  - port: {{ .Values.database.port }}
     protocol: TCP
     targetPort: 27017
   selector:
