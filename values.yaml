@@ -6,6 +6,7 @@ database:
   rootPassword: seceret
   rootUsername: admin
   namespace: mongochart
+  port: 27017
 
 application:
   name: mongdb
