@@ -11,7 +11,7 @@ data:
     processManagement:
        fork: true
     net:
-       bindIp: 127.0.0.1
+       bindIp: {{ .Values.application.name }}
        port: 27017
     setParameter:
        enableLocalhostAuthBypass: false
