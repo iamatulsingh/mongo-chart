@@ -17,4 +17,4 @@ jobs:
         uses: stefanprodan/helm-gh-pages@v1.4.1
         with:
           token: ${{ secrets.CR_TOKEN }}
-          charts_dir: "*"
+          charts_dir: "./"
