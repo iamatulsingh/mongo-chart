@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Publish Helm charts
-        uses: J12934/helm-gh-pages-action@master
+        uses: stefanprodan/helm-gh-pages@master
         with:
           token: ${{ secrets.CR_TOKEN }}
-          charts_dir: "./"
+          charts_dir: chart
