@@ -4,8 +4,10 @@
 
 ## How to install?
 
- ####  This will install with default values
- * `helm install mongo-helmchart ./mongo-helmchart/`
+ ###  1) From source code
 
- ####  This way you can configure `database password`, `deploymeny name` and `namespace`
- * `helm install mongo-helmchart ./mongo-helmchart/ --set database.rootPassword=somethingelse --set database.port=27017 --set application.name=testmongo --set database.namespace=mongodb`
+  ####  This will install with default values
+  * `helm install mongo-helmchart ./mongo-helmchart/`
+
+  ####  This way you can configure `database password`, `deploymeny name` and `namespace`
+  * `helm install mongo-helmchart ./mongo-helmchart/ --set database.rootPassword=somethingelse --set database.port=27017 --set application.name=testmongo --set database.namespace=mongodb`
