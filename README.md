@@ -14,5 +14,5 @@
   ####  This will install with default values
   * `helm install mongo-helmchart ./mongodb/`
 
-  ####  This way you can configure `database password`, `deploymeny name` and `namespace`
+  ####  This way you can configure `database password`, `database port`, `deploymeny name` and `namespace`
   * `helm install mongo-helmchart ./mongodb/ --set database.rootPassword=somethingelse --set database.port=27017 --set application.name=testmongo --set database.namespace=mongodb`
