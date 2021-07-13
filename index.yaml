@@ -3,12 +3,12 @@ entries:
   mongo-helmchart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-09T19:33:41.464953881Z"
+    created: "2021-07-13T18:29:58.000638253Z"
     description: A Helm chart for Kubernetes
-    digest: d4b379499d239c285587e3e33c08842601486866924c929aaedeff45cdfe03ec
+    digest: 835f76446afddc6c8925938c942cd44fd9c4bd22bb4ccb675bcab782467a4887
     name: mongo-helmchart
     type: application
     urls:
     - https://iamatulsingh.github.io/mongo-helmchart/mongo-helmchart-0.1.0.tgz
     version: 0.1.0
-generated: "2021-07-09T19:33:41.46415987Z"
+generated: "2021-07-13T18:29:57.999927152Z"
