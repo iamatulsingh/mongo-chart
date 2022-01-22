@@ -1,6 +1,6 @@
-# deployment name can be change here
+# statefulset name can be change here
 
-{{- define "mongo-helmchart.deployment" -}}
+{{- define "mongo-helmchart.statefulset" -}}
 {{- if .Values.application.name -}}
 {{- printf "%s" .Values.application.name -}}
 {{- else -}}

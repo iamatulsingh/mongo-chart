@@ -3,16 +3,17 @@
 # Declare variables to be passed into your templates.
 
 database:
-  rootPassword: seceret
+  rootPassword: secret
   rootUsername: admin
   namespace: mongochart
   port: 27017
+  storage: 1Gi
 
 application:
-  name: mongdb
+  name: mongodb
 
 
-replicaCount: 1
+replicas: 3
 
 
 imagePullSecrets: []

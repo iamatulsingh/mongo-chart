@@ -5,9 +5,9 @@ metadata:
   namespace: {{ .Values.database.namespace }}
 spec:
   ports:
-  - port: {{ .Values.database.port }}
-    protocol: TCP
-    targetPort: 27017
+    - port: {{ .Values.database.port }}
+      protocol: TCP
+      targetPort: 27017
   selector:
     app: {{ .Values.application.name }}
   type: NodePort

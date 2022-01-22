@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "mongo-helmchart.statefulset" . }}
+  namespace: {{ .Values.database.namespace }}
+spec:
+  replicas: {{ .Values.replicas }}
+  serviceName: {{ .Values.application.name }}
+  selector:
+    matchLabels:
+      app: {{ include "mongo-helmchart.statefulset" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "mongo-helmchart.statefulset" . }}
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: {{ include "mongo-helmchart.statefulset" . }}
+        image: mongo
+        command: 
+        - mongod
+        - "--bind_ip_all"
+        - "--replSet"
+        - rs0
+        ports:
+          - containerPort: {{ .Values.database.port }}
+        envFrom:
+        - secretRef:
+            name: mongodb-secret
+        volumeMounts:
+        - name: mongodb-configuration-file
+          mountPath: /etc/mongod.conf
+          readOnly: true
+        - name: mongodb-volume
+          mountPath: /data/db
+      volumes:
+      - name: mongodb-configuration-file
+        configMap:
+          name: mongodb-config-file
+  volumeClaimTemplates:
+  - metadata:
+      name: mongodb-volume
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: {{ .Values.database.storage }}
